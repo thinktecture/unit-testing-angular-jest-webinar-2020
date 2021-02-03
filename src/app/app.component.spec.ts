@@ -28,4 +28,9 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('ng-unit-test app is running!');
   });
+
+  test('should keep its HTML', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    expect(fixture).toMatchSnapshot();
+  });
 });
